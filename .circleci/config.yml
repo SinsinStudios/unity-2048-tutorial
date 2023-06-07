@@ -24,4 +24,5 @@ workflows:
           build-target: StandaloneWindows64
           compress: true
           context: myProjectContext
+          dsd
 
