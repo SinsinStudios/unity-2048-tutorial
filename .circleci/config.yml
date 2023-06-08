@@ -10,19 +10,18 @@ workflows:
   build-unity-project:
     jobs:
       - unity/build:
-          name: 'build-Windows64-il2cpp'
-          step-name: 'Build StandaloneWindows64 il2cpp'
+          name: 'build-android'
+          step-name: 'Build Android'
           unity-license-var-name: 'UNITY_ENCODED_LICENSE'
           unity-username-var-name: 'UNITY_USERNAME'
           unity-password-var-name: 'UNITY_PASSWORD'
           executor:
-            name: 'unity/windows-2019'
-            size: 'large'
+            name: 'unity/ubuntu'
+            target_platform: 'android'
             editor_version: '2021.3.2f1'
-            target_platform: 'windows-il2cpp'
+            resource_class: 'large'
           project-path: 'Unity2D-Demo-Game-CI-CD/src'
-          build-target: StandaloneWindows64
-          compress: true
+          build-target: 'Android'
           context: myProjectContext
           
 
